@@ -1,0 +1,18 @@
+module memory_16x4(op,ip,rd_wr,clk,address);
+output reg [3:0] op;
+input[3:0] ip;
+input[3:0] address;
+input rd_wr,clk;
+reg[3:0] memory [0:15];
+
+always @(posedge clk)
+ begin
+  if(rd_wr)
+       op=memory[address];
+  else
+	 begin
+		  memory[address]=ip;
+    end
+  end
+
+endmodule

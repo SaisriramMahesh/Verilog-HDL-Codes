@@ -1,0 +1,8 @@
+module propagate(p, bp, inpa, inpb);
+input[3:0]inpa, inpb;
+output [3:0]p;
+output bp;
+assign p = inpa^inpb;
+assign bp = &p;
+
+endmodule

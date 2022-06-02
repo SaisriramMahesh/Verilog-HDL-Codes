@@ -1,0 +1,12 @@
+module prog7_carryskip_adder(sum, cout, inpa, inpb, cin);
+input [3:0] inpa, inpb;
+input cin;
+output [3:0] sum;
+output cout;
+wire [3:0] p;
+wire c0;
+wire bp;
+Ripplecarry_exp1 g1(sum, c0, inpa, inpb, cin);
+propagate p1(p, bp, inpa, inpb);
+mux2x1 m0(c0, cin, bp, count);
+endmodule

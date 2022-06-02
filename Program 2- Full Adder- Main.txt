@@ -1,0 +1,41 @@
+module fulladder_exp1(sum,carry,a,b,c);
+output sum;
+output carry;
+input a;
+input b;
+input c;
+wire w1;
+wire w2;
+wire w3;
+halfadder_exp1 ha1(w1,w2,a,b);
+halfadder_exp1 ha2(sum,w3,c,w1);
+ORgate_exp1 or1(carry,w2,w3);
+
+
+
+endmodule
+
+
+
+
+module halfadder_exp1(sum,carry,a,b);
+output sum;
+output carry;
+input a;
+input b;
+
+assign sum = a ^ b;
+assign carry = a & b;
+
+endmodule
+
+
+
+
+module ORgate_exp1(c,a,b);
+output c;
+input a;
+input b;
+or (c,a,b);
+
+endmodule

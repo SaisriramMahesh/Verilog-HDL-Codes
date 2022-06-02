@@ -1,0 +1,45 @@
+module prog4_Dflip_flop_tb_v;
+
+	// Inputs
+	reg d;
+	reg clk;
+	reg rst;
+
+	// Outputs
+	wire q;
+	wire qb;
+
+	// Instantiate the Unit Under Test (UUT)
+	prog4_Dflip_flop uut (
+		.q(q), 
+		.qb(qb), 
+		.d(d), 
+		.clk(clk), 
+		.rst(rst)
+	);
+
+	initial begin
+		// Initialize Inputs
+		d = 0;
+		clk = 0;
+		rst = 0;
+
+		// Wait 100 ns for global reset to finish
+		#100;
+		d = 1;
+		rst = 1;
+
+		#100;
+		d = 1;
+		rst = 0;
+
+		#100;
+		d = 0;
+		rst = 0;
+        
+		// Add stimulus here
+
+	end
+		always #50 clk = ~clk;
+      
+endmodule

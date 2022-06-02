@@ -1,0 +1,37 @@
+module prog7_carryskip_adder_tb_v;
+
+	// Inputs
+	reg [3:0] inpa;
+	reg [3:0] inpb;
+	reg cin;
+
+	// Outputs
+	wire [3:0] sum;
+	wire cout;
+
+	// Instantiate the Unit Under Test (UUT)
+	prog7_carryskip_adder uut (
+		.sum(sum), 
+		.cout(cout), 
+		.inpa(inpa), 
+		.inpb(inpb), 
+		.cin(cin)
+	);
+
+	initial begin
+		// Initialize Inputs
+		inpa = 0;
+		inpb = 1111;
+		cin = 0;
+
+		// Wait 100 ns for global reset to finish
+		#100;
+		inpa = 1000;
+		inpb = 1000;
+		cin = 0;
+        
+		// Add stimulus here
+
+	end
+      
+endmodule

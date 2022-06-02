@@ -1,0 +1,41 @@
+module ROM_16x4(address, rd, out);
+input [3:0] address;
+input rd;
+output reg[3:0]out;
+reg [3:0] ROM[15:0];
+
+initial 
+begin
+ROM[4'b0000]=4'b1111;
+ROM[4'b0001]=4'b1110;
+ROM[4'b0010]=4'b1101;
+ROM[4'b0011]=4'b1100;
+ROM[4'b0100]=4'b1011;
+ROM[4'b0101]=4'b1010;
+ROM[4'b0110]=4'b1001;
+ROM[4'b0111]=4'b1000;
+ROM[4'b1000]=4'b0111;
+ROM[4'b1001]=4'b0110;
+ROM[4'b1010]=4'b0101;
+ROM[4'b1011]=4'b0100;
+ROM[4'b1100]=4'b0011;
+ROM[4'b1101]=4'b0010;
+ROM[4'b1110]=4'b0001;
+ROM[4'b1111]=4'b0000;
+
+end
+
+always@(rd, address)
+begin
+
+	if(rd)
+		
+
+		begin
+
+			out = ROM[address];
+
+		end
+
+end
+endmodule

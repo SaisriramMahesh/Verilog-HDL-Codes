@@ -1,0 +1,41 @@
+module prog6_carrylookahead_adder_tb_v;
+
+	// Inputs
+	reg [3:0] inpa;
+	reg [3:0] inpb;
+	reg c_0;
+
+	// Outputs
+	wire [3:0] sum;
+	wire [3:0] c_4;
+
+	// Instantiate the Unit Under Test (UUT)
+	prog6_carrylookahead_adder uut (
+		.sum(sum), 
+		.c_4(c_4), 
+		.inpa(inpa), 
+		.inpb(inpb), 
+		.c_0(c_0)
+	);
+
+	initial begin
+		// Initialize Inputs
+		inpa = 1100;
+		inpb = 0111;
+		c_0 = 0;
+
+		// Wait 100 ns for global reset to finish
+		#100;
+		inpa = 1100;
+		inpb = 0011;
+		c_0 = 0;
+		#100;
+		inpa = 1100;
+		inpb = 0011;
+		c_0 = 1; 
+        
+		// Add stimulus here
+
+	end
+      
+endmodule

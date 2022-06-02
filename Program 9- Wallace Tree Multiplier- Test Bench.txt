@@ -1,0 +1,29 @@
+module Wallace_tb_v;
+
+	// Inputs
+	reg [3:0] A;
+	reg [3:0] B;
+
+	// Outputs
+	wire [7:0] prod;
+
+	// Instantiate the Unit Under Test (UUT)
+	Wallace uut (
+		.A(A), 
+		.B(B), 
+		.prod(prod)
+	);
+
+	initial begin
+		// Initialize Inputs
+		A = 1101;
+		B = 1100;
+
+		// Wait 100 ns for global reset to finish
+		#100;
+        
+		// Add stimulus here
+
+	end
+      
+endmodule

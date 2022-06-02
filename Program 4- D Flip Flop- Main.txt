@@ -1,0 +1,17 @@
+//program 4- D flip flop
+module prog4_Dflip_flop(q, qb, d, clk, rst);
+input d, clk, rst;
+output q, qb;
+reg q, qb;
+always @(posedge clk)
+if(rst == 1)
+begin
+q = 0;
+qb = 0;
+end
+else
+begin
+q = d;
+qb = ~q;
+end
+endmodule

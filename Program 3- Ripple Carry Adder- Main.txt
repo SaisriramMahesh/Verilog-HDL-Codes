@@ -1,0 +1,14 @@
+module Ripplecarry_exp1(s,c,x,y,cin);
+input [3:0] x;
+input [3:0] y;
+input cin;
+output [3:0] s;
+output c;
+wire w1,w2,w3;
+
+fulladder_exp1 fa1(s[0],w1,x[0],y[0],cin);
+fulladder_exp1 fa2(s[1],w2,x[1],y[1],w1);
+fulladder_exp1 fa3(s[2],w3,x[2],y[2],w2);
+fulladder_exp1 fa4(s[3],c,x[3],y[3],w3);
+
+endmodule
